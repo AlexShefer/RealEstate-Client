@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/auth";
 import { SearchProvider } from "./context/search";
-import Main from "./components/nav/Main";
+import Navbar from "./components/nav/Navbar";
 import { Toaster } from "react-hot-toast";
 // components
 import Home from "./pages/Home";
@@ -39,7 +39,7 @@ function App() {
         <BrowserRouter>
             <AuthProvider>
                 <SearchProvider>
-                    <Main />
+                    <Navbar />
                     <Toaster />
                     <Routes>
                         <Route path="/" element={<Home />} />
