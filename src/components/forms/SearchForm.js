@@ -42,9 +42,9 @@ export default function SearchForm() {
 
     return (
         <>
-            <div className="container m-5">
+            <div className="container m-lg-5">
                 <div className="row">
-                    <div className="col-lg-12 form-control">
+                    <div className="col-12 form-control">
                         <GooglePlacesAutocomplete
                             apiKey={GOOGLE_PLACES_KEY}
                             apiOptions="au"
@@ -61,41 +61,57 @@ export default function SearchForm() {
                         />
                     </div>
                 </div>
-                <div className="btn-group d-flex justify-content-center mt-3">
+                <div className="row btn-group d-flex mt-2 mb-2 ms-md-1">
                     <button
                         onClick={() =>
-                            setSearch({ ...search, action: "Buy", price: "" })
+                            setSearch({
+                                ...search,
+                                action: "Buy",
+                                price: "",
+                            })
                         }
-                        className="btn btn-primary col-lg-2"
+                        className="btn btn-primary col-6 col-md-2"
                     >
                         {search.action === "Buy" ? "✔️ Buy" : "Buy"}
                     </button>
                     <button
                         onClick={() =>
-                            setSearch({ ...search, action: "Rent", price: "" })
+                            setSearch({
+                                ...search,
+                                action: "Rent",
+                                price: "",
+                            })
                         }
-                        className="btn btn-primary col-lg-2"
+                        className="btn btn-primary col-6 col-md-2"
                     >
                         {search.action === "Rent" ? "✔️ Rent" : "Rent"}
                     </button>
                     <button
                         onClick={() =>
-                            setSearch({ ...search, type: "House", price: "" })
+                            setSearch({
+                                ...search,
+                                type: "House",
+                                price: "",
+                            })
                         }
-                        className="btn btn-primary col-lg-2"
+                        className="btn btn-primary col-6 col-md-2"
                     >
                         {search.type === "House" ? "✔️ House" : "House"}
                     </button>
                     <button
                         onClick={() =>
-                            setSearch({ ...search, type: "Land", price: "" })
+                            setSearch({
+                                ...search,
+                                type: "Land",
+                                price: "",
+                            })
                         }
-                        className="btn btn-primary col-lg-2"
+                        className="btn btn-primary col-6 col-md-2"
                     >
                         {search.type === "Land" ? "✔️ Land" : "Land"}
                     </button>
 
-                    <div className="dropdown">
+                    <div className="btn btn-primary col-12 col-md-2 dropdown">
                         <button
                             className="btn btn-primary dropdown-toggle"
                             data-bs-toggle="dropdown"
@@ -104,7 +120,7 @@ export default function SearchForm() {
                             &nbsp; {search?.price ? search?.price : "Price"}
                         </button>
 
-                        <ul className="dropdown-menu">
+                        <ul className="  dropdown-menu">
                             {search.action === "Buy" ? (
                                 <>
                                     {sellPrices.map((item) => (
@@ -148,7 +164,7 @@ export default function SearchForm() {
                     </div>
                     <button
                         onClick={handleSearch}
-                        className="btn btn-danger col-lg-2"
+                        className="btn btn-danger col-12 col-md-2"
                     >
                         Search
                     </button>

@@ -35,7 +35,6 @@ export default function Login() {
                     ? navigate(location.state)
                     : navigate("/dashboard");
             }
-            console.log(data);
         } catch (err) {
             console.log(err);
             toast.error("Something went wrong. Try it again.");
